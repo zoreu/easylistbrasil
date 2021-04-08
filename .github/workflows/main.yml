@@ -16,9 +16,9 @@ jobs:
         uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
-      - run: |
+      run: |
         git config --global user.email "travis@travis-ci.org"
         git config --global user.name "TravisCI"
         git config --global push.default "matching"
-        git clone -b filtro "https://${{secrets.token}}@github.com/$username/$repository.git" output
+        git clone -b filtro "https://${{secrets.token}}@github.com/$username/$repository.git" output  
         php script/build.php
