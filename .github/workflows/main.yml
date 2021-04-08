@@ -8,15 +8,12 @@ on:
     
 jobs:
   build:
-    runs-on: ${{ matrix.operating-system }}
-    strategy:
-      matrix:
-        operating-system: [ ubuntu-18.04, windows-2019 ]
-    name: PHP ${{ matrix.php }} sample
+    runs-on: ubuntu-18.04
+    name: PHP
     steps:
       - uses: actions/checkout@master
       - name: Setup PHP
         uses: nanasess/setup-php@master
         with:
-          php-version: ${{ matrix.php }}
+          php-version: '7.4'
       - run: php script/build.php
