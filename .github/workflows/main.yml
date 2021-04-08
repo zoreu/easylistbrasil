@@ -9,10 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: PHP
+    name: Build list
     steps:
       - uses: actions/checkout@master
-      - name: Setup PHP
+      - name: Setup PHP and make list
         uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
