@@ -16,6 +16,6 @@ jobs:
         uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
-      - run: git config --global user.email "travis@travis-ci.org" && git config --global user.name "TravisCI" && git config --global push.default "matching" && git clone -b filtro "https://${{ secrets.GITHUB_TOKEN }}@github.com/zoreu/easylistbrasil.git" output && php script/build.php && cd output && git add --all . && git commit -m "Publishing revision $(git --git-dir ../.git rev-parse --short HEAD)" && git push --force origin filtro
+      - run: git config --global user.email "travis@travis-ci.org" && git config --global user.name "TravisCI" && git config --global push.default "matching" && git clone -b filtro "https://${{ secrets.token }}@github.com/zoreu/easylistbrasil.git" output && php script/build.php && cd output && git add --all . && git commit -m "Publishing revision $(git --git-dir ../.git rev-parse --short HEAD)" && git push --force origin filtro
 
 
