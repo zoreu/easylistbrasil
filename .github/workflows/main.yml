@@ -16,8 +16,4 @@ jobs:
         uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
-      - run: |
-      git config --global user.email "travis@travis-ci.org" \
-      git config --global user.name "TravisCI" \
-      git config --global push.default "matching" \
-      php script/build.php
+      - run: php script/build.php
