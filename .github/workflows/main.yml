@@ -9,14 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-    - name: Setup PHP with fail-fast
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '7.4'
-        tools: deployer
-      env:
-        fail-fast: true
-    - name: Commit files
-      run: |
-        - php script/build.php
+  steps:
+    - uses: actions/checkout@master
+    - uses: nanasess/setup-php@master
+    with:
+      php-version: '7.4'
+    - run: php script/build.php
