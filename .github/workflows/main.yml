@@ -23,7 +23,7 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: Commit files
       run: |
-        - git clone -b filtro "https://$token@github.com/zoreu/easylistbrasil.git" output
+        - git clone -b filtro "https://${{secrets.GITHUB_TOKEN}}@github.com/zoreu/easylistbrasil.git" output
         - php script/build.php
         cd output && git add --all .        
         git commit -m "Add changes" -a
