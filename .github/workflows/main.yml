@@ -24,7 +24,3 @@ jobs:
     - name: Commit files
       run: |
         - git clone -b filtro "https://${{secrets.GITHUB_TOKEN}}@github.com/zoreu/easylistbrasil.git" output
-        - php script/build.php
-        cd output && git add --all .        
-        git commit -m "Add changes" -a
-        git push --force origin filtro
