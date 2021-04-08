@@ -19,4 +19,4 @@ jobs:
         fail-fast: true
     - name: Commit files
       run: |
-        - git clone -b filtro "https://${{secrets.GITHUB_TOKEN}}@github.com/zoreu/easylistbrasil.git" output
+        - git clone -b filtro "https://github.com/zoreu/easylistbrasil.git" output
