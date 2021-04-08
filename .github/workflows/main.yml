@@ -9,9 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: PHP
     steps:
-    - uses: actions/checkout@master
-    - uses: nanasess/setup-php@master
-    with:
-      php-version: '7.4'
-    - run: php script/build.php
+      - uses: actions/checkout@master
+      - name: Setup PHP
+        uses: nanasess/setup-php@master
+        with:
+          php-version: ${{ matrix.php }}
+      - run: php script/build.php
