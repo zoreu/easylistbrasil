@@ -16,5 +16,5 @@ jobs:
         uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
-      run: |
+      - run: |
         php script/build.php
