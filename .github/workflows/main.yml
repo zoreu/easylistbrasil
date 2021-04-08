@@ -12,13 +12,13 @@ jobs:
     name: PHP
     steps:
       - uses: actions/checkout@master
+      - uses: ad-m/github-push-action@master
       - name: Setup PHP
         uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
-      - run: git config --global user.email "travis@travis-ci.org" && git config --global user.name "TravisCI" && git config --global push.default "matching" && git clone -b filtro "https://github.com/zoreu/easylistbrasil.git" output && php script/build.php && cd output && git add --all . && git commit -m "Publishing revision $(git --git-dir ../.git rev-parse --short HEAD)"
-      - name: Push changes
-      - uses: ad-m/github-push-action@master
-        with:
           github_token: ${{secrets.token}}
           branch: filtro
+      - run: git config --global user.email "travis@travis-ci.org" && git config --global user.name "TravisCI" && git config --global push.default "matching" && git clone -b filtro "https://github.com/zoreu/easylistbrasil.git" output && php script/build.php && cd output && git add --all . && git commit -m "Publishing revision $(git --git-dir ../.git rev-parse --short HEAD)"
+
+
